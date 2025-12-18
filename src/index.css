@@ -263,3 +263,10 @@ nav h2{
     background: rgba(0, 0, 0, 0.55);
     z-index: 50;
 }
+
+/* wishlist page */
+.page-wishlist  h2{
+    margin: 90px;
+    text-align: center;
+    font-size: 42px;
+}
