@@ -1,9 +1,9 @@
-import {toggleCart} from "../features/cart/cartUiSlice"
 import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector} from "react-redux"
-import { FaShoppingCart } from 'react-icons/fa'
+import { FaHeart, FaShoppingCart } from 'react-icons/fa'
+import {toggleCart} from "../features/cart/cartSlice"
 const Navbar = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     const total = useSelector(state =>
         state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
@@ -25,8 +25,9 @@ const Navbar = () => {
 
         <div className="nav-right">
             <NavLink to="/wishlist" className="wishlist-btn">
-                Favorites ❤️
+                <FaHeart/>
             </NavLink>
+            
             <div className="cart-icon" onClick={() => dispatch(toggleCart())}>
                 <FaShoppingCart />
                 <span className='badge'>{total}</span>
