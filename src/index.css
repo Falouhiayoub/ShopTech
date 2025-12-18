@@ -208,3 +208,58 @@ nav h2{
 }
 
 /* Product Cards end */
+
+/* sidebar */
+.sidebar{
+    position: fixed;
+    right:0;
+    top: 70px;
+    width: 340px;
+    height: calc(100vh - 70px);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(25px);
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.sidebar h2{
+    margin-top: 20px;
+    color: #00e0ff;
+}
+
+.cart-item{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+}
+
+.cart-item button{
+    background: #00e0ff;
+    border: none;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cart-item button:last-child{
+    background: #ff3b3b;
+}
+/* sidebar ends */
+
+/* SideBar Toggle*/
+.sidebar{
+    transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
+    z-index: 100;
+}
+
+.sidebar.open{
+    transform:  translateX(0);
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 50;
+}
