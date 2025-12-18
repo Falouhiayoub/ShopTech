@@ -13,7 +13,7 @@ const ProductCard = ({product}) => {
       <p>{product.price} $</p>
 
       <div className="actions">
-        <FaShoppingCart onClick={() => dispatchEvent(addToCart(product))}/>
+        <FaShoppingCart onClick={() => dispatch(addToCart(product))}/>
         <FaHeart onClick={() => dispatch(toggleWishlist(product))}/>
       </div>
     </div>
