@@ -115,7 +115,7 @@ nav h2{
 }
 /* navbar Ends */
 
-/* Home page */
+/* Home page and catalogue */
 .page{
     padding-top: 90px;
 }
@@ -159,3 +159,52 @@ nav h2{
     margin-top: 40px;
     margin-left: 200px;
 }
+
+/* Home page and catalogue Ends */
+
+/* Product Card */
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.card img{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.card h3{
+    margin-top: 14px;
+    font-size: 18px;
+}
+
+.card p{
+    margin: 8px 0;
+    color: #00e0ff;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.actions svg{
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.actions svg:hover{
+    color: #00e0ff;
+    transform: scale(1.2);
+}
+
+/* Product Cards end */
