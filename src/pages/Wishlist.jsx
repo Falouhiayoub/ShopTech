@@ -1,19 +1,26 @@
 import React from 'react'
+import { addToCart } from '../features/cart/cartSlice'
+import { toggleWishlist } from '../features/wishlist/wishlistSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Wishlist = () => {
+  const wishlist = useSelector(state => state.wishlist)
+  const dispatch = useDispatch()
   return (
-    <div className='page wishlist'>
+    <div className='page-wishlist'>
       <h2>My Wishlist</h2>
 
       <div className="grid">
-        <div className="card">
-          <img src="" alt="wishlist image" />
-          <h3>product Name</h3>
-          <p>product price $</p>
+          {wishlist.map(p => (
+          <div className='card' key={p.id}>
+            <img src={p.image} alt={p.name}/>
+            <h3>{p.name}</h3>
+            <p>{p.price} $</p>
 
-          <button>Add To Cart</button>
-          <button>Remove From Wishlist</button>
-        </div>
+            <button onClick={() => dispatch(addToCart(p))}>Add To Cart</button>
+            <button onClick={() => dispatch(toggleWishlist(p))}>Remove Item</button>
+          </div>
+        ))}
       </div>
     </div>
   )
