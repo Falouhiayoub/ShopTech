@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "../features/cart/cartSlice"
 import wishlistReducer from "../features/wishlist/wishlistSlice"
-import cartUIReducer from '../features/cart/cartUiSlice'
+import cartUIReducer from '../features/cart/cartUISlice'
+import { saveCartToStorage } from "./utils/cartStorage";
 
 export const store = configureStore({
     reducer: {
@@ -9,4 +10,9 @@ export const store = configureStore({
         wishlist: wishlistReducer,
         cartUI: cartUIReducer,
     },
+})
+
+store.subscribe(() => {
+    const state = store.getState()
+    saveCartToStorage(state.cart.items)
 })
